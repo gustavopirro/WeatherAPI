@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="." method="post">
+                {% csrf_token %}
+                <input type="radio" id="id" name="search_type" value="id">
+                <label for="id">ID</label><br>
+                <input type="radio" id="data" name="search_type" value="data">
+                <label for="data">Data</label><br>
+            </form>
+
+            <input type="datetime-local" name="" id="">
+            {% for weather in object_list %}
+            <p>Temperature: {{ weather.temperature }}º</p>
+            <p>Humidity: {{ weather.humidity }}%</p>
+            <p>Luminosity: {{ weather.luminosity }}K</p>
+            <p>Registered at: {{ weather.created_at }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,6 +1,5 @@
 # Weather API
 
-# Configurando o projeto
 ## Clonar o repositório:
 ``
 git clone https://github.com/gustavopirro/weather-api.git
